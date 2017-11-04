@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test1.1</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+<body>
+  <canvas id="canvas" width="640" height="480">您的浏览器不支持canvas</canvas>
+</body>
+<script type="text/javascript">
+
+window.onload = function(){
+	test.created();
+}
+
+var test = {
+	canvas: document.getElementById('canvas'),
+	context: canvas.getContext('2d'),
+	drawBckground: function (){
+		this.context.fillStyle = "rgb(0,0,0)";
+		this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);		
+	},
+	drawRect: function (){
+		this.context.fillStyle = "rgb(255,255,255)";
+		this.context.fillRect(this.canvas.width*0.5-this.canvas.width*0.5*0.5, this.canvas.height*0.5-this.canvas.width*0.5*0.5, this.canvas.width*0.5, canvas.width*0.5);		
+	},
+	created: function (){		
+		this.drawBckground();
+		this.drawRect();
+	}
+}
+</script>
+</html>

@@ -1,2 +1,2 @@
 # ComputerGraphicsExperiment
-ComputerGraphicsExperiment 计算机图形学实验
+Computer graphics experiment 计算机图形学实验
