@@ -36,7 +36,7 @@ void display(void) {
     for (int i = 0; i < 4; ++i) {
         glColor3fv(colors[i]);
         glPushMatrix();
-        glTranslated((i-3)*50, (i-3)*50, -i*50);
+        glTranslated((i-3)*50, (i-3)*50, -i*5);
         glScaled(i+1, i+1, i+1);
         draw_ring();
         glPopMatrix();
