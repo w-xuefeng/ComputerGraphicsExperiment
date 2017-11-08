@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test3.1</title>
+  <style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+    }
+  </style>  
+  <script type="text/javascript" src="../../assets/js/three.min.js"></script>
+</head>
+<body>  
+</body>
+<script type="text/javascript">
+window.onload = () => test.draw();
+
+let test = {
+  draw () {
+    //定义画布大小
+    let width = 640;
+    let height = 480;
+
+    //定义3D场景
+    let scene = new THREE.Scene();
+     
+    //定义镜头
+    let camera = new THREE.PerspectiveCamera(
+      90, //垂直从下到上的视觉角度（单位：度数）
+      width/height, //镜头高宽比，即 高度除以宽度
+      5, //近端的水平面裁剪
+      5000 //远端的水平面裁剪
+    );
+     
+    //定义渲染器
+    let renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width,height);//定义尺寸
+    document.body.appendChild(renderer.domElement);//添加到页面
+     
+    //定义几何体
+    let geometry = new THREE.BoxGeometry(
+      300, //x轴对应面的宽度
+      300, //y轴对应面的宽度
+      1000, //z轴对应面的宽度
+      1, //x轴对应几何体表面切片数
+      1, //y轴对应几何体表面切片数　
+      1  //z轴对应几何体表面切片数
+    );
+     
+    //定义材质
+    let material = new THREE.MeshBasicMaterial({color:'#FFFFFF', wireframe:true});
+     
+    //生成正方形
+    let cube = new THREE.Mesh(geometry, material);
+
+    //旋转角度
+    cube.rotation.x = 0.5;
+    cube.rotation.y = 0.5;
+     
+    //添加到场景中
+    scene.add(cube);
+     
+    //修改镜头位置
+    camera.position.z = 1000;
+     
+    //渲染场景到镜头
+    renderer.render(scene, camera);
+  }
+}
+
+</script>
+</html>
