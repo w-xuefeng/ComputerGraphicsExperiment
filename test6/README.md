@@ -104,7 +104,7 @@ int main(int argc,char** argv){
  - 效果截图
 
     ![testA4.1](https://raw.githubusercontent.com/w-xuefeng/ComputerGraphicsExperiment/master/assets/A/testA6.1.gif)
-
+    - （PS:单击旋转，右键暂停）
  - 2.test6.2
 
  ```c++
