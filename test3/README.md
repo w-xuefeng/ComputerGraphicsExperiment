@@ -83,7 +83,8 @@ void main(int argc, char **argv){
 #include <gl/glut.h>
 
 GLfloat vertices[][3] = {
-    {-1.0,-1.0,-1.0},
+    //vertices begin
+    {-1.0,-1.0,-1.0},
     {1.0,-1.0,-1.0},
     {1.0,1.0,-1.0},
     {-1.0,1.0,-1.0},
@@ -91,11 +92,12 @@ GLfloat vertices[][3] = {
     {1.0,-1.0,1.0},
     {1.0,1.0,1.0},
     {-1.0,1.0,1.0}
-    //vertices
+    //vertices end
 };
 
 GLfloat colors[8][3] = {
-    {0.0,0.0,0.0},
+    //colors beigin
+    {0.0,0.0,0.0},
     {1.0,0.0,0.0},
     {1.0,1.0,0.0},
     {0.0,1.0,0.0},
@@ -103,7 +105,7 @@ GLfloat colors[8][3] = {
     {1.0,0.0,1.0},
     {1.0,1.0,1.0},
     {0.0,1.0,1.0}
-    //colors
+    //colors end
 };
 
 void init(void){
