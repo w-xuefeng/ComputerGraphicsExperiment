@@ -78,7 +78,7 @@ void main(int argc, char **argv){
 
  - 2.test3.2
 
- ```c++
+ ```c
 
 #include <gl/glut.h>
 
@@ -91,6 +91,7 @@ GLfloat vertices[][3] = {
     {1.0,-1.0,1.0},
     {1.0,1.0,1.0},
     {-1.0,1.0,1.0}
+    //vertices
 };
 
 GLfloat colors[8][3] = {
@@ -102,6 +103,7 @@ GLfloat colors[8][3] = {
     {1.0,0.0,1.0},
     {1.0,1.0,1.0},
     {0.0,1.0,1.0}
+    //colors
 };
 
 void init(void){
