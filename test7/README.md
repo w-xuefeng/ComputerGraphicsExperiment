@@ -373,10 +373,12 @@ void vxv(float * n, float * v1, float * v2){
 }
 
 void loadIdentity(Matrix m){
-    Matrix identity = {{1.0,0.0,0.0,0.0},
+    Matrix identity = {
+        {1.0,0.0,0.0,0.0},
         {0.0,1.0,0.0,0.0},
         {0.0,0.0,1.0,0.0},
-        {0.0,0.0,0.0,1.0}};
+        {0.0,0.0,0.0,1.0}
+    };
     for(int i = 0;i < 4; i++)
         for(int j = 0;j < 4; j++)
             m[i][j] = identity[i][j];
@@ -400,31 +402,41 @@ void rotate(float angle, float * axis){
     loadIdentity(RM);
     normalize(v);
     float r1= (v[1] < 0) ? acos(vv(v,i)) : -acos(vv(v,i));
-    Matrix Rz = {{cos(r1), -sin(r1),0.0,0.0},
+    Matrix Rz = {
+        {cos(r1), -sin(r1),0.0,0.0},
         {sin(r1),cos(r1),0.0,0.0},
         {0.0,0.0,1.0,0.0},
-        {0.0,0.0,0.0,1.0}};
+        {0.0,0.0,0.0,1.0}
+    };
     preMultiply(Rz,RM);
     float r2 = -acos(vv(axis,k));
-    Matrix Ry={{cos(r2),0.0,sin(r2),0.0},
+    Matrix Ry={
+        {cos(r2),0.0,sin(r2),0.0},
         {0.0,1.0,0.0,0.0},
         {-sin(r2),0.0,cos(r2),0.0},
-        {0.0,0.0,0.0,1.0}};
+        {0.0,0.0,0.0,1.0}
+    };
     preMultiply(Ry,RM);
-    Matrix R={{cos(angle),-sin(angle),0.0,0.0},
+    Matrix R={
+        {cos(angle),-sin(angle),0.0,0.0},
         {sin(angle),cos(angle),0.0,0.0},
         {0.0,0.0,1.0,0.0},
-        {0.0,0.0,0.0,1.0}};
+        {0.0,0.0,0.0,1.0}
+    };
     preMultiply(R,RM);
-    Matrix R_y={{cos(-r2),0.0,sin(-r2),0.0},
+    Matrix R_y={
+        {cos(-r2),0.0,sin(-r2),0.0},
         {0.0,1.0,0.0,0.0},
         {-sin(-r2),0.0,cos(-r2),0.0},
-        {0.0,0.0,0.0,1.0}};
+        {0.0,0.0,0.0,1.0}
+    };
     preMultiply(R_y,RM);
-    Matrix R_z={{cos(-r1),-sin(-r1),0.0,0.0},
+    Matrix R_z={
+        {cos(-r1),-sin(-r1),0.0,0.0},
         {sin(-r1),cos(-r1),0.0,0.0},
         {0.0,0.0,1.0,0.0},
-        {0.0,0.0,0.0,1.0}};
+        {0.0,0.0,0.0,1.0}
+    };
     preMultiply(R_z,RM);
     preMultiply(RM,CRM);
 }
